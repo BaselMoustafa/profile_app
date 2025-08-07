@@ -1,6 +1,7 @@
-import 'package:first_flutter_project/helpers/assets_helper.dart';
 import 'package:first_flutter_project/styles/app_colors.dart';
+import 'package:first_flutter_project/widgets/info_card_widget.dart';
 import 'package:first_flutter_project/widgets/profile_image_widget.dart';
+import 'package:first_flutter_project/widgets/social_media_contacts_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -51,25 +52,20 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
 
-                GestureDetector(
-                  onTap: onTap,
-                  child: Container(
-                    height: 60,
-                    width: 60,
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.lightGrey,
-                          blurRadius: 20
-                        )
-                      ]
-                    ),
-                    child: Image.asset(AssetsHelper.udemy),
-                  ),
-                )
+                SizedBox(height: 10,),
+
+                SocialMediaContactsWidget(),
+
+
+                InfoCardWidget(
+                  color: Colors.deepPurple,
+                  iconData: Icons.work,
+                  title: "Experience",
+                  subtitle: "3 years of experience",
+                ),
+
+
+                
               ],
             ),
           ),
@@ -78,7 +74,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  void onTap(){
-    print("Widget Tapped");
-  }
 }
