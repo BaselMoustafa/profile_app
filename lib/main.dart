@@ -1,35 +1,23 @@
+import 'package:first_flutter_project/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
 
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-        ),
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-          
-            Icon(
-              Icons.add,
-              size: 100,
-              color: Colors.blueAccent,
-            ),
-        
-            Text(
-              "Hello World",
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 50
-              ),
-            )
-          ],
-        ),
-      ),
-    ),
+    const _MyApp()
   );
+}
+
+
+class _MyApp extends StatelessWidget{
+
+  const _MyApp();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:ProfileScreen(),
+    );
+  }
 }
